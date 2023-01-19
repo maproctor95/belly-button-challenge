@@ -45,8 +45,6 @@ function buildMetadata(sample) {
     PANEL.html("");
 
     // Use `Object.entries` to add each key and value pair to the panel
-    // Hint: Inside the loop, you will need to use d3 to append new
-    // tags for each key-value in the metadata.
     Object.entries(result).forEach(([key, value]) => {
       PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
     });
@@ -81,9 +79,6 @@ function buildCharts(sample) {
   
   
     // Create the yticks for the bar chart.
-    // Hint: Get the the top 10 otu_ids and map them in descending order  
-    //  so the otu_ids with the most bacteria are last. 
-
     var yticks = otuIDs.slice(0,10).reverse().map(function (elem) {return `OTU ${elem}`});
     var xticks = sampleVals.slice(0,10).reverse();
     var labels = otuLabs.slice(0,10).reverse();
